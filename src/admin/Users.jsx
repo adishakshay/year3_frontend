@@ -26,7 +26,7 @@ const Users = () => {
 
   useEffect(() => {
     // Fetch users from the backend
-    axios.get('http://localhost:8080/signup/getall')
+    axios.get('http://localhost:8086/signup/getall')
       .then(response => {
         setUsers(response.data);
         setFilteredUsers(response.data);
@@ -67,7 +67,7 @@ const Users = () => {
         role: editedRole
     };
 
-    axios.put(`http://localhost:8080/adminuser/users/${editedEmail.toLowerCase()}`, updatedUser)
+    axios.put(`http://localhost:8086/adminuser/users/${editedEmail.toLowerCase()}`, updatedUser)
         .then(response => {
             const updatedUsers = users.map(user =>
                 user.email.toLowerCase() === editedEmail.toLowerCase() ? { ...user, ...updatedUser } : user
@@ -88,7 +88,7 @@ const Users = () => {
     const isConfirmed = window.confirm("Are you sure you want to delete this user?");
     if (!isConfirmed) return;
 
-    axios.delete(`http://localhost:8080/adminuser/user/${email}`)
+    axios.delete(`http://localhost:8086/adminuser/user/${email}`)
       .then(response => {
         if (response.data) {
           const updatedUsers = users.filter(user => user.email !== email);
@@ -115,7 +115,7 @@ const Users = () => {
       role: newRole 
     };
 
-    axios.post('http://localhost:8080/signup/add', newUser)
+    axios.post('http://localhost:8086/signup/add', newUser)
       .then(response => {
         const updatedUsers = [...users, response.data];
         setUsers(updatedUsers);

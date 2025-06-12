@@ -28,7 +28,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:8080/contact/add', formData);
+      const response = await axios.post('http://localhost:8086/contact/add', formData);
       
       if (response.status === 201) {
         alert('We will connect you soon!');

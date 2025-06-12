@@ -28,7 +28,7 @@ const Login = () => {
     console.log('Submitted Role:', role); // Debugging log to check role value before submission
 
     try {
-      const response = await axios.post('http://localhost:8080/signup/login', loginData);
+      const response = await axios.post('http://localhost:8086/signup/login', loginData);
       
       if (response.status === 201) {
         const { key } = response.data; 

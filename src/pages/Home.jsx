@@ -6,7 +6,6 @@ import 'animate.css/animate.min.css';
 import Typing from 'react-typing-effect';
 import '../asserts/Home.css';
 import Footer from "../components/Footer";
-// import { Helmet } from 'react-helmet';
 import Navbar from "../components/Navbar";
 import img1 from '../asserts/Image/chuttersnap-Q_KdjKxntH8-unsplash.jpg';
 import img2 from '../asserts/Image/evangeline-shaw-ysbTWw4hrG4-unsplash.jpg';

@@ -16,7 +16,7 @@ const eventAmounts = {
   'Charity Gala': 200000,
 };
 
-const API_BASE_URL = 'http://localhost:8080'; // Update with your actual backend URL
+const API_BASE_URL = 'http://localhost:8086'; // Update with your actual backend URL
 
 const AdminPayment = () => {
   const [payments, setPayments] = useState([]);

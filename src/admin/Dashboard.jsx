@@ -22,15 +22,15 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userResponse = await fetch('http://localhost:8080/adminuser/users/count');
+        const userResponse = await fetch('http://localhost:8086/adminuser/users/count');
         const userData = await userResponse.json();
         setUserCount(userData);
 
-        const eventResponse = await fetch('http://localhost:8080/adminuser/events/count');
+        const eventResponse = await fetch('http://localhost:8086/adminuser/events/count');
         const eventData = await eventResponse.json();
         setEventCount(eventData);
 
-        const paymentResponse = await fetch('http://localhost:8080/adminuser/payments/count');
+        const paymentResponse = await fetch('http://localhost:8086/adminuser/payments/count');
         const paymentData = await paymentResponse.json();
         setPaymentCount(paymentData);
 
