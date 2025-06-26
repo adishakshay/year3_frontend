@@ -65,7 +65,7 @@ const Events = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:8086/event/add', formData);
+      const response = await axios.post('https://year3-backend.onrender.com/event/add', formData);
 
       if (response.status === 201) {
         setShowPopup(true);

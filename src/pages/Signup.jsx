@@ -29,7 +29,7 @@ const Signup = () => {
 
     try {
       // Send POST request to backend
-      const response = await axios.post('http://localhost:8086/signup/add', user);
+      const response = await axios.post('https://year3-backend.onrender.com/signup/add', user);
 
       // On success, store the user data and redirect
       setUser(response.data);

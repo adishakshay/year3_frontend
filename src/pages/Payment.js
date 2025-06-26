@@ -63,7 +63,7 @@ const Payment = () => {
     };
 
     try {
-      await axios.post('http://localhost:8086/payment/add', paymentData);
+      await axios.post('https://year3-backend.onrender.com/payment/add', paymentData);
       console.log('Payment details saved successfully.');
     } catch (error) {
       console.error('Error saving payment details:', error);
@@ -85,7 +85,7 @@ const Payment = () => {
 
     try {
       // Verify event details
-      const response = await axios.post('http://localhost:8086/event/verify', {
+      const response = await axios.post('https://year3-backend.onrender.com/event/verify', {
         name: username,
         phoneNumber: phone,
         eventType: event,

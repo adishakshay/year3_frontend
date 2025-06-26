@@ -28,7 +28,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:8086/contact/add', formData);
+      const response = await axios.post('https://year3-backend.onrender.com/contact/add', formData);
       
       if (response.status === 201) {
         alert('We will connect you soon!');

@@ -13,7 +13,7 @@ const SettingsPage = () => {
   useEffect(() => {
     const loggedInEmail = localStorage.getItem('loggedInEmail');
     if (loggedInEmail) {
-      axios.get(`http://localhost:8080/signup/getByEmail/${loggedInEmail}`)
+      axios.get(`https://year3-backend.onrender.com/signup/getByEmail/${loggedInEmail}`)
         .then(response => {
           if (response.status === 200) {
             const userData = response.data;
@@ -54,7 +54,7 @@ const SettingsPage = () => {
     const loggedInEmail = localStorage.getItem('loggedInEmail');
     if (loggedInEmail) {
       try {
-        const response = await axios.put(`http://localhost:8080/settings/${loggedInEmail}`, {
+        const response = await axios.put(`https://year3-backend.onrender.com/settings/${loggedInEmail}`, {
           currentPassword: password.current,
           newPassword: password.new
         });

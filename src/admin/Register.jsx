@@ -25,7 +25,7 @@ const Register = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('http://localhost:8086/event/getAll');
+        const response = await axios.get('https://year3-backend.onrender.com/event/getAll');
         setEvents(response.data);
         setFilteredEvents(response.data);
       } catch (error) {
@@ -63,7 +63,7 @@ const Register = () => {
     if (!isConfirmed) return;
 
     try {
-        const response = await axios.delete(`http://localhost:8086/adminuser/register/${eventId}`);
+        const response = await axios.delete(`https://year3-backend.onrender.com/adminuser/register/${eventId}`);
         if (response.status === 200) {
             setEvents(events.filter(event => event.eventId !== eventId)); // Ensure eventId matches
         } else {
@@ -81,7 +81,7 @@ const Register = () => {
 
   const handleSaveEdit = async () => {
     try {
-      await axios.put(`http://localhost:8086/adminuser/register/${editEvent.eventId}`, {
+      await axios.put(`https://year3-backend.onrender.com/adminuser/register/${editEvent.eventId}`, {
         ...editEvent,
         phoneNumber: parseInt(editEvent.phoneNumber) // Convert phoneNumber to a number if needed
       });
@@ -110,7 +110,7 @@ const Register = () => {
 
   const handleAddNewEvent = async () => {
     try {
-      const response = await axios.post('http://localhost:8086/event/add', newEvent);
+      const response = await axios.post('https://year3-backend.onrender.com/event/add', newEvent);
       setEvents([...events, response.data]);
       setIsAdding(false);
       setNewEvent({
